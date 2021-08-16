@@ -3,6 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// 按需引入element-ui
+import './plugins/element'
+import 'element-ui/lib/theme-chalk/index.css';
+
+
 Vue.config.productionTip = false
 
 new Vue({
