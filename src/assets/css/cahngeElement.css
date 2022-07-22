@@ -1,0 +1,300 @@
+.home .el-tree {
+  border-radius: 7px;
+}
+
+/* 注册 */
+/* 页输入框宽度 */
+.registered .el-date-editor.el-input,
+.el-date-editor.el-input__inner {
+  width: 100%;
+}
+/* 输入title字体 */
+.registered .el-form-item__label {
+  color: #fff;
+}
+/* 输入框背景色 */
+.registered .el-input__inner {
+  border: 1px solid #fff !important;
+}
+
+/* home */
+.el-tree-node__label {
+  font-size: 16px !important;
+  color: #000;
+  font-weight: 500;
+}
+/* 每级行高 */
+.home .el-tree-node__content {
+  height: 40px !important;
+  border-radius: 7px;
+}
+/* 修改一级菜单默认样式 */
+.home,
+.el-tree .el-tree-node .el-tree-node__content {
+  background: url("../images//management//左侧菜单/ejmr.png") no-repeat;
+}
+/* 修改二级菜单默认样式 */
+.home .el-tree .el-tree-node .el-tree-node__children .el-tree-node__content {
+  background: #fff;
+}
+/* 修改一级菜单选中样式 */
+.home
+  .el-tree--highlight-current
+  .is-current.el-tree-node
+  > .el-tree-node__content {
+  background: url("../images//management//左侧菜单/erjixz.png") no-repeat;
+  background-size: 100% 100%;
+  color: #1068c0 !important;
+}
+.is-checked {
+  background: url("../images//management//左侧菜单/erjixz.png") no-repeat;
+  background-size: 100% 100%;
+  color: #1068c0 !important;
+}
+.home
+  .el-tree--highlight-current
+  .is-current.el-tree-node
+  > .el-tree-node__content
+  .el-tree-node__label {
+  color: #fff !important;
+}
+.library-collection
+  .el-tree--highlight-current
+  .is-current.el-tree-node
+  > .el-tree-node__content
+  .el-tree-node__label {
+  color: #333 !important;
+}
+
+
+/* 修改二级菜单选中样式 */
+.home
+  .el-tree--highlight-current
+  .el-tree-node__children
+  .is-current.el-tree-node
+  > .el-tree-node__content {
+  background: url("../images//management//左侧菜单/sanjixz.png") no-repeat
+    0 0;
+  background-size: 100% 100%;
+  color: #1068c0 !important;
+}
+.el-tree--highlight-current
+  .el-tree-node__children
+  .is-current.el-tree-node
+  > .el-tree-node__content
+  .el-tree-node__label {
+  color: #1068c0 !important;
+}
+
+/* 数据库采集 */
+.parameter .el-form .el-form-item__label {
+  text-align: justify;
+  text-align-last: justify;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+.library-collection .preview .el-tree-node__content {
+  width: 180px;
+}
+/* 修改一级菜单默认样式 */
+.library-collection .preview .el-tree .el-tree-node .el-tree-node__content {
+  background: url("../images//management/树形菜单/moren.png") no-repeat;
+}
+/* 修改二级菜单默认样式 */
+.library-collection
+  .preview
+  .el-tree
+  .el-tree-node
+  .el-tree-node__children
+  .el-tree-node__content {
+  background: #fff;
+}
+/* 修改一级菜单选中样式 */
+.library-collection .preview .el-tree .is-expanded .el-tree-node__content {
+  background: url("../images//management/树形菜单/xz.png") no-repeat;
+  background-size: 100% 100%;
+  color: #fff !important;
+}
+.library-collection
+  .preview
+  .el-tree
+  .is-expanded
+  .el-tree-node__content
+  .el-tree-node__label {
+  color: #fff !important;
+}
+.library-collection
+  .preview
+  .el-tree
+  .el-tree-node__children
+  .el-tree-node__content
+  .el-tree-node__label {
+  color: #000 !important;
+}
+.library-collection
+  .preview
+  .el-tree
+  .el-tree-node__children
+  .is-current
+  .el-tree-node__content {
+  /* background: url('../images//management/树形菜单/二级菜单选中.png') no-repeat 0 0; */
+  background-color: #d3edfe;
+  background-size: 100% 100%;
+  width: 162px;
+}
+
+/* 数据采集 */
+/* 修改一级菜单选中样式 */
+.data-load .parameter .el-tree .is-expanded .el-tree-node__content {
+  background: url("../images//management/树形菜单/xz.png") no-repeat;
+  background-size: 100% 100%;
+  color: #fff !important;
+}
+/* 修改二级菜单默认样式 */
+.data-load
+  .parameter
+  .el-tree
+  .el-tree-node
+  .el-tree-node__children
+  .el-tree-node__content {
+  background: #fff;
+}
+.data-load
+  .parameter
+  .el-tree
+  .is-expanded
+  .el-tree-node__content
+  .el-tree-node__label {
+  color: #fff !important;
+}
+.data-load
+  .parameter
+  .el-tree
+  .el-tree-node__children
+  .el-tree-node__content
+  .el-tree-node__label {
+  color: #000 !important;
+}
+.data-load
+  .parameter
+  .el-tree
+  .el-tree-node__children
+  .is-current
+  .el-tree-node__content {
+  /* background: url('../images//management/树形菜单/二级菜单选中.png') no-repeat 0 0; */
+  background-color: #d3edfe !important;
+  background-size: 100% 100%;
+  width: 162px;
+}
+
+/* 新建类型转转换规则 输入框label加边框 */
+.create-typeRules .data-input .el-form .el-form-item .el-form-item__content {
+  margin-left: 0 !important;
+} 
+.create-typeRules .data-input .el-form .el-form-item  .el-input__inner {
+  border-radius: 0;
+}
+
+/* label文字对齐 */
+.el-form .el-form-item__label {
+  text-align: justify;
+  -moz-text-align-last: justify;
+  text-align-last: justify;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+
+
+
+.el-table th{
+  height: 70px;
+  line-height: 70px;
+  padding: 0 !important; 
+}
+.el-table th .cell {
+  height: 70px;
+  line-height: 70px;
+}
+.el-loading-spinner{
+  font-size: 100px;
+ }
+ .el-loading-text{
+  font-size: 100px;
+ }
+
+ .el-table__body, .el-table__footer, .el-table__header {
+   width: 100%;
+ }
+ .registered  .el-form-item__error {
+  top: 80% !important;
+}
+.Logistic,.reliability,.K-means, .is-checked  {
+  background: none !important;
+}
+.Logistic .el-table th .cell, .Logistic .el-table th {
+  height: 35px !important;
+  line-height: 35px !important;
+}
+.Logistic .el-table td .cell, .Logistic .el-table td {
+  height: 30px !important;
+  line-height: 30px !important;
+}
+.Logistic .el-table td {
+  padding: 0px;
+  font-size: 14px;
+}
+.Retrieve .el-tree .el-tree-node .el-tree-node__content {
+  background: none;
+}
+.el-tree-node__expand-icon {
+    cursor: pointer;
+    color: #c0c4cc;
+    font-size: 12px;
+    transform: rotate(0deg);
+    transition: transform .3s ease-in-out;
+}
+
+.el-submenu__title {
+  line-height: 40px;
+  height: 40px;
+  background: url("../images//management//左侧菜单/ejmr.png") no-repeat;
+
+}
+.el-submenu .el-menu-item, .el-submenu .el-submenu__title {
+  line-height: 40px;
+  height: 40px;
+}
+.el-menu-item-group__title {
+  padding: 0 !important;
+}
+.el-submenu .el-menu-item {
+  height: 40px !important;
+  line-height: 40px !important;
+}
+/* .el-submenu__icon-arrow::before {
+  display: none;
+} */
+/* .el-icon-arrow-down{
+  display: none;
+} */
+.el-submenu__title:hover {
+  background-color: #fff !important;
+}
+
+.node circle {
+	fill: #fff;
+	stroke: steelblue;
+	stroke-width: 3px;
+}
+
+.node text {
+	font: 12px sans-serif;
+}
+
+.link {
+	fill: none;
+	stroke: #ccc;
+	stroke-width: 2px;
+}

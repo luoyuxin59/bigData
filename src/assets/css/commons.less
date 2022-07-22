@@ -1,0 +1,97 @@
+@import "tool.less";
+
+.button {
+  display: inline-block;
+  width: 80px;
+  padding: 0 0;
+  .font-justify();
+}
+.login .el-form-item__label,
+.registered .el-form-item__label {
+  .font-justify();
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*设置奇数行颜色*/
+// table tr:nth-child(odd)
+// {
+//     background: #ccc;
+// }
+
+// 数据采集分页位置调整
+.library-collection .page {
+  margin-left: 36% !important;
+}
+// 数据库采集数据清洗
+.library-clean .page {
+  margin-left: 35% !important;
+}
+
+// table样式
+.table {
+  width: 560px;
+}
+table   {
+  display: block;
+  width: 560px;
+  overflow-x: scroll;
+  border-color: #eee;
+  font-size: 14px;
+}
+table tr:nth-child(even) {
+  background: #f3f4f6;
+}
+
+table thead tr {
+  width: 100%;
+  background-image: linear-gradient(#fff, #eee);
+  border: none;
+}
+table thead tr th {
+  position: relative;
+}
+table tr {
+  line-height: 30px;
+  border-color: #eee;
+}
+table th,
+table td {
+  padding: 0 10px;
+  text-align: center;
+  border-color: #eee;
+  cursor: pointer;
+}
+table tr:hover {
+  background-color: #e8f6ff;
+}
+.noData {
+  text-align: center;
+  border-color: #eee;
+}
+.page {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+table thead tr th .iconfont {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.border {
+  padding: 20px;
+  box-shadow: inset 0px 0px 4px #daedff, 0px 0px 3px #1991ff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.el-drawer__body {
+  padding: 60px 50px 0;
+}
