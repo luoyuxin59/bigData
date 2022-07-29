@@ -3,10 +3,12 @@
     <template>
         <el-table
           :data="logList"
-
+          
           border
           style="width: 100%">
-          <el-table-column prop="recordId" label="ID" width="80">
+          <el-table-column type="index" label="#" width="80">
+          </el-table-column>
+          <el-table-column prop="recordId" label="ID" :show-overflow-tooltip="true" >
           </el-table-column>
           <el-table-column prop="recordName" label="清洗记录名称" >
           </el-table-column>

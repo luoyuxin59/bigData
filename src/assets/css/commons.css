@@ -100,3 +100,6 @@ table thead tr th .iconfont {
 .el-drawer__body {
   padding: 60px 50px 0;
 }
+.drawer_pwd .el-drawer__title {
+  width: 40% !important;
+}

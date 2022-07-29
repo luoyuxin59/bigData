@@ -168,6 +168,13 @@ const routes = [
         name: 'clearDictionary',
         component: () => import('../views/system/clearDictionary.vue')
       },
+       // 字典管理
+       {
+        path: 'dictionaryManagement',
+        name: 'dictionaryManagement',
+        component: () => import('../views/system/dictionaryManagement.vue')
+      },
+      
     ]
   },
   {

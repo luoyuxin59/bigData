@@ -27,7 +27,7 @@ export function request(config) {
       // if(res.data.Code == 401 ) {
       //  router.push('/login')
       // }else {
-        if(res.data.code != 200)  { 
+        if(res.data.code != 200 && res.data.code != 201 )  { 
           Notification.error({
             title:'未请求到资源',
             message: res.data.message

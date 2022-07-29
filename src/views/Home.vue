@@ -129,7 +129,10 @@ export default {
                             index: 'clearDictionary',
                             title: '清洗字典管理'
                         },
-                      
+                       {
+                            index: 'dictionaryManagement',
+                            title: '字典管理'
+                        },
                     ]
                 },
             ],

@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import {
   Button, Message, MessageBox, Loading, Row, Select, Upload, Form, Input, FormItem, Checkbox, DatePicker, Table, TableColumn,
-  Tree, Option, Pagination, Dialog, CheckboxGroup,Popconfirm, Col,  Tooltip, Menu, Submenu, MenuItem, MenuItemGroup, Drawer
+  Tree, Option, Pagination, Dialog, CheckboxGroup,Popconfirm, Col,  Tooltip, Menu, Submenu, MenuItem, MenuItemGroup, Drawer, Link,
+  Switch
 } from 'element-ui'
 Vue.use(Button)
 Vue.use(Row)
@@ -27,6 +28,8 @@ Vue.use(Submenu)
 Vue.use(MenuItem)
 Vue.use(MenuItemGroup)
 Vue.use(Drawer)
+Vue.use(Link)
+Vue.use(Switch)
 Vue.prototype.$message = Message;
 Vue.prototype.$prompt = MessageBox.prompt;
 Vue.prototype.$msgbox = MessageBox;

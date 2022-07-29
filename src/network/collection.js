@@ -646,3 +646,137 @@ export function saveConversionRules(query) {
   })
 }
 
+// 清洗转换规则详情查询接口
+export function getDetail(query) {
+  return request({
+    url: '/ConversionRule/advancedQueryDetail',
+    method: 'get',
+    params: query
+  })
+}
+
+// 删除清洗规则转换详情
+export function deleteDetail(query) {
+  return request({
+    url: '/ConversionRule/deleteDetil',
+    method: 'DELETE',
+    params: query
+  })
+}
+
+// 清洗规则转换详情编辑新增
+export function saveDetail(query) {
+  return  request({
+    url: '/ConversionRule/addRuleDetail',
+    method: 'post',
+    data: query
+  })
+}
+
+// 字典查询
+export function getDict(query) {
+  return  request({
+    url: '/sys/dict/list',
+    method: 'post',
+    params: query
+  })
+}
+
+// 新增字典 
+export function addDict(query) {
+  return  request({
+    url: '/sys/dict/add',
+    method: 'post',
+    data: query
+  })
+}
+
+// 修改字典 
+export function editDict(query) {
+  return  request({
+    url: '/sys/dict/edit',
+    method: 'post',
+    data: query
+  })
+}
+
+// 删除字典 
+export function removeDict(query) {
+  return  request({
+    url: `/sys/dict/delete?id=${query.id}`,
+    method: 'get',
+    query: query
+  })
+}
+
+// 编码校验
+export function checkCode(query) {
+  return  request({
+    url: `/sys/dict/check`,
+    method: 'get',
+    params: query
+  })
+}
+
+// 字典彻底删除 
+export function removeRecycleDict(query) {
+  return  request({
+    url: `/sys/dict/deletePhysic`,
+    method: 'get',
+    params: query
+  })
+}
+
+// 字典取回字段
+export function backDict(query) {
+  return  request({
+    url: `/sys/dict/back`,
+    method: 'get',
+    params: query
+  })
+}
+
+// 查询字典内容
+export function getDictItem(query) {
+  return  request({
+    url: `/sys/dictItem/list`,
+    method: 'get',
+    params: query
+  })
+}
+
+// 新增字典内容
+export function addDictItem(query) {
+  return  request({
+    url: `/sys/dictItem/add`,
+    method: 'POST',
+    data: query
+  })
+}
+
+// 修改字典内容
+export function editDictItem(query) {
+  return  request({
+    url: `/sys/dictItem/edit`,
+    method: 'POST',
+    data: query
+  })
+}
+
+// 删除字典内容 
+export function removeDictItem(query) {
+  return  request({
+    url: `/sys/dictItem/delete`,
+    method: 'get',
+    params: query
+  })
+}
+
+// 字典导出接口 
+export function exportDict(query) {
+  return  request({
+    url: `/sys/dict/exportXls`,
+    method: 'GET',
+    params: query
+  })
+}

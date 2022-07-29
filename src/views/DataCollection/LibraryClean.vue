@@ -139,20 +139,41 @@
       width="30%"
       :before-close="handleClose"
     >
-      <el-select
-        v-model="selectValue"
-        multiple
-        placeholder="请选择"
-        size="mini"
-      >
-        <el-option
-          v-for="item in rulesList"
-          :key="item.ruleId"
-          :label="item.ruleName"
-          :value="item.ruleId"
-        >
-        </el-option>
-      </el-select>
+    <el-form :model="rulebindRecord">
+      <el-form-item label="请选择规则" label-width="150px" >
+         <el-select
+            v-model="selectValue"
+            multiple
+            placeholder="请选择"
+            size="mini"
+          >
+            <el-option
+              v-for="item in rulesList"
+             
+               :key="item.ruleId"
+              :label="item.ruleName"
+              :value="item.ruleId"
+            >
+            </el-option>
+          </el-select>
+      </el-form-item>
+      <el-form-item label="请选择转换规则" label-width="150px">
+          <el-select
+            v-model="changeValue"
+            multiple
+            placeholder="请选择"
+            size="mini"
+          >
+            <el-option
+              v-for="item in changeRuleList"
+               :key="item.id"
+              :label="item.dictName"
+              :value="item.id"
+            >
+            </el-option>
+          </el-select>
+      </el-form-item>
+    </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="confirmBind">确 定</el-button>
@@ -166,6 +187,7 @@ import {
   selectCleanRulesList,
   dataClean,
   cleanData,
+  getConversionRules
 } from "../../network/collection";
 import Btn from "../../components/common/Btn.vue";
 import RulesList from "../../components/common/RulesList.vue";
@@ -179,6 +201,7 @@ export default {
   },
   data() {
     return {
+      changeValue: [], // 转换规则
       columnName: "", //选择的列名
       selectValue: [],
       dialogVisible: false, //对话框是否显示
@@ -213,6 +236,7 @@ export default {
       dataShow: [],
       CdataShow: [],
       ruleArr: [],
+      changeRuleList: []  //转换规则
     };
   },
   computed: {},
@@ -222,10 +246,25 @@ export default {
   mounted() {
     this.selectCleanRulesList();
     this.getList();
+    this.getConversionRules()
     // if (this.cleanData.length == 0) this.getList();
   },
   methods: {
-   
+  //  获取所有转换规则
+     getConversionRules() {
+       let params ={
+        pageSize: 1,
+        pageNum: 1000,
+        query: "",
+        type: "",
+      }
+      getConversionRules(params).then((res) => {
+        console.log(res);
+        if (res.code === 200) {
+          this.changeRuleList = res.data.data
+        }
+      });
+    },
     getList() {
       this.notCleanData = this.$store.state.notCleanData;
       this.tableLabel = this.$store.state.tableLabel;
@@ -359,6 +398,7 @@ export default {
             this.$message.success(res.message);
             this.recordIds.push(res.data.recordId);
             this.selectValue = [];
+            this.changeValue = []
             this.columnName = "";
             this.rulebindRecord.bindContent = [];
           } else {
@@ -372,23 +412,34 @@ export default {
     // 确认绑定
     confirmBind() {
       let obj = { columnName: "", ruleId: [] };
+      let ruleObj = { columnName: "", changeList:[],rulesList:[]  };
       obj.columnName = this.columnName;
+      ruleObj.columnName = this.columnName;
+      ruleObj.changeList = this.changeValue;
+      ruleObj.rulesList = this.selectValue;
       // this.columnName;
-      obj.ruleId = this.selectValue;
+      obj.ruleId = this.selectValue.concat(this.changeValue);
+      console.log(obj.ruleId );
       this.rulebindRecord.bindContent.push(obj);
-      this.ruleArr.push(obj); //用于回显查看绑定的规则
+      //用于回显查看绑定的规则
+      console.log(ruleObj);
+      this.ruleArr.push(ruleObj)
       this.dialogVisible = false;
       this.clean(obj);
     },
     bindRules(columnName) {
+      console.log(columnName);
       this.dialogVisible = true;
       this.columnName = columnName;
       this.selectValue = [];
+      this.changeValue = []
       this.ruleArr.forEach((item) => {
         if (item.columnName === columnName) {
-          this.selectValue = item.ruleId;
+          this.selectValue = item.rulesList;
+          this.changeValue = item.changeList
         }
       });
+
     },
     // 关闭对话框
     handleClose() {

@@ -1,28 +1,32 @@
 <template>
-  <div>
-    <h1></h1>
+  <div class="cronDemo">
+    <el-popover v-model="isShow">
+      <el-input slot="reference" @click="cronPopover=true" 
+        v-model="cron" placeholder="请输入定时策略" 
+        style="width: 40% ;margin-left: -50%">
+      </el-input>
+ 
+      <cronComponent @change="changeCron" @close="cronPopover=false" i18n="cn"></cronComponent>
+ 
+    </el-popover>
   </div>
 </template>
+ 
 <script>
-import { getSystemData } from '../../network/collection';
-export default {
-  name: "",
-  components: {},
-  data() {
-    return {};
-  },
-  created() {},
-  computed: {},
-  mounted() {
-    this.getSystemData()
-  },
-  methods: {
-    getSystemData() {
-      getSystemData().then(res => {
-        console.log(res);
-      })
-    }
-  },
-};
+  import {cronComponent} from 'vue-cron';
+  export default {
+    components: { cronComponent},
+    data(){
+      return {
+        isShow: false,
+        cron:''
+      }
+    },
+    methods: {
+      changeCron(val){
+        this.cron=val
+      },
+ 
+    },
+  }
 </script>
-<style lang="scss" scoped></style>

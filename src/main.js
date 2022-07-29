@@ -7,7 +7,9 @@ import Bus from './untils/bus'
 import XLSX from 'xlsx'
 Vue.prototype.XLSX = XLSX
 Vue.prototype.$bus = Bus
-
+//全局引入
+import VueCron from 'vue-cron'
+Vue.use(VueCron);
 // 引入样式文件 
 import './assets/css/cahngeElement.css'
 import './assets/css/normalize.css'
